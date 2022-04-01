@@ -55,7 +55,7 @@ public class GitHubTest {
     void checkOpenUserPage() {
         UserPage userPage = new UserPage();
         loginPage.getLoginField().shouldBe(Condition.visible).clear();
-        loginPage.login("nekhaevna2212@gmail.com", "MIStati2212");
+        loginPage.login("", "");
         System.out.println();
         userPage.getUserMenuBTN().click();
         userPage.getUserAccordionTitle().shouldBe(Condition.visible);
@@ -63,8 +63,8 @@ public class GitHubTest {
 
     static Stream<Arguments> getDataLogin() {
         return Stream.of(
-                Arguments.of("  ", "MIStati2212", loginPage.getLoginField()),
-                Arguments.of("nekhaevna2212@gmail.com", "  ", loginPage.getLoginField())
+                Arguments.of("  ", , loginPage.getLoginField()),
+                Arguments.of("", "  ", loginPage.getLoginField())
         );
     }
 }
